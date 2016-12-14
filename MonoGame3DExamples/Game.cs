@@ -12,6 +12,8 @@ namespace MonoGame3DExamples
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
+        private DrawBasicPrimitiveExample example;
+
         public Game()
         {
             graphics = new GraphicsDeviceManager(this);
@@ -27,6 +29,7 @@ namespace MonoGame3DExamples
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
+            example = new DrawBasicPrimitiveExample(this);
 
             base.Initialize();
         }
@@ -76,6 +79,7 @@ namespace MonoGame3DExamples
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             // TODO: Add your drawing code here
+            example.Draw(GraphicsDevice);
 
             base.Draw(gameTime);
         }
